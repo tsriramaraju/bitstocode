@@ -5,7 +5,6 @@ import 'package:user_app/components/button/primary_button.dart';
 import 'package:user_app/constants/colors.dart';
 import 'package:user_app/constants/illustrations.dart';
 import 'package:user_app/home.dart';
-import 'package:user_app/screens/onboarding/onboarding.dart';
 import 'package:user_app/screens/skillExploration/skill_exploration.dart';
 
 class LoginPage extends StatefulWidget {

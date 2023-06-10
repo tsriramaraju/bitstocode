@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:user_app/components/button/primary_button.dart';
 import 'package:user_app/constants/colors.dart';
 import 'package:user_app/home.dart';
-import 'package:user_app/screens/skillExploration/skill_exploration.dart';
 
 class QuizResultPage extends StatelessWidget {
   const QuizResultPage({super.key});

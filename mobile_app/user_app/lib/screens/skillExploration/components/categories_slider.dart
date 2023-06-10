@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -16,21 +18,32 @@ class CategoriesSlider extends StatefulWidget {
 }
 
 class _CategoriesSliderState extends State<CategoriesSlider> {
+  int _currentIndex = 0;
+
+  void _onIndexChanged(int index) {
+    print(index);
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 400,
       child: Swiper(
-          itemCount: 4,
+          itemCount: categories.length,
+          onIndexChanged: _onIndexChanged,
           // indicatorLayout: PageIndicatorLayout.COLOR,
           scale: .79,
           viewportFraction: .78,
           itemBuilder: (BuildContext context, int index) {
             return CategorySlide(
-              description: categoriesData[index]['description'],
-              title: categoriesData[index]['title'],
-              illustration: categoriesData[index]['illustration'],
-              fullDescription: categoriesData[index]['fullDescription'],
+              description: categories[index].description,
+              title: categories[index].name,
+              illustration: categories[index].illustration,
+              fullDescription: categories[index].bigDescription,
+              isActive: _currentIndex == index ? true : false,
             );
           }),
     );
@@ -42,11 +55,13 @@ class CategorySlide extends StatelessWidget {
   final String title;
   final String description;
   final String fullDescription;
+  final bool isActive;
   const CategorySlide(
       {super.key,
       required this.title,
       required this.description,
       required this.illustration,
+      required this.isActive,
       required this.fullDescription});
 
   @override
@@ -64,7 +79,7 @@ class CategorySlide extends StatelessWidget {
         height: 316,
         padding: const EdgeInsets.all(24),
         decoration: BoxDecoration(
-          color: KDarkShadeColor,
+          color: isActive ? KDarkShadeColor : KBrandColor,
           borderRadius: BorderRadius.circular(12),
         ),
         child: Column(
@@ -90,10 +105,8 @@ class CategorySlide extends StatelessWidget {
                 ],
               ),
               SvgPicture.asset(
-                KDeveloper,
-                width: 200,
+                illustration,
                 height: 150,
-                // fit: BoxFit.fill,
               ),
               Text(
                 description,

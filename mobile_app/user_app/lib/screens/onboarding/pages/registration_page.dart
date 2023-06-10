@@ -6,7 +6,6 @@ import 'package:user_app/constants/colors.dart';
 import 'package:user_app/constants/illustrations.dart';
 import 'package:user_app/home.dart';
 import 'package:user_app/screens/onboarding/pages/login_page.dart';
-import 'package:user_app/screens/skillExploration/skill_exploration.dart';
 
 class RegistrationPage extends StatefulWidget {
   const RegistrationPage({super.key});
