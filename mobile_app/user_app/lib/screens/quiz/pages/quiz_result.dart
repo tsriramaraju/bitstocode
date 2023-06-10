@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:user_app/components/button/primary_button.dart';
 import 'package:user_app/constants/colors.dart';
+import 'package:user_app/home.dart';
 import 'package:user_app/screens/skillExploration/skill_exploration.dart';
 
 class QuizResultPage extends StatelessWidget {
@@ -78,7 +79,7 @@ class QuizResultPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const SkillExplorationScreen(),
+                      builder: (context) => const HomeScreen(),
                     ),
                   );
                 },

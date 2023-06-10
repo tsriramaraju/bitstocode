@@ -5,7 +5,6 @@ import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'package:user_app/components/button/primary_button.dart';
 import 'package:user_app/constants/colors.dart';
 import 'package:user_app/constants/illustrations.dart';
-import 'package:user_app/constants/images.dart';
 import 'package:user_app/screens/skillExploration/pages/role_page.dart';
 
 class CategoryPage extends StatelessWidget {

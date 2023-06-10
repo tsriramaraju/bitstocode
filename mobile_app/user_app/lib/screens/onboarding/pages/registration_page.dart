@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:user_app/components/button/primary_button.dart';
 import 'package:user_app/constants/colors.dart';
 import 'package:user_app/constants/illustrations.dart';
+import 'package:user_app/home.dart';
 import 'package:user_app/screens/onboarding/pages/login_page.dart';
 import 'package:user_app/screens/skillExploration/skill_exploration.dart';
 
@@ -39,9 +40,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
   Widget build(BuildContext context) {
     void handleRegister() {
       Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => const SkillExplorationScreen()));
+          context, MaterialPageRoute(builder: (context) => const HomeScreen()));
     }
 
     return Scaffold(
